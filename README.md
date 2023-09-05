@@ -1,3 +1,9 @@
+# 新增加追加内容的功能，方便特殊场合写日志并查看
+
+```
+curl http://example.com/log_channel1?text=newline2
+```
+
 # Minimalist Web Notepad
 
 This is an open source clone of notepad.cc, which is now defunct.

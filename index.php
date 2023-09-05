@@ -1,5 +1,4 @@
 <?php
-
 // Base URL of the website, without trailing slash.
 $base_url = getenv('MWN_BASE_URL') ?: '';
 
@@ -33,6 +32,14 @@ if (isset($_POST['text'])) {
     }
     die;
 }
+
+if (isset($_GET['text'])) {
+
+    // Update file.
+    file_put_contents($path, $_GET['text'].PHP_EOL, FILE_APPEND | LOCK_EX);
+    die;
+}
+
 
 // Print raw file if the client is curl, wget, or when explicitly requested.
 if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || strpos($_SERVER['HTTP_USER_AGENT'], 'Wget') === 0) {
