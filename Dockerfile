@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:7.4-apache-buster
 
 # Set PHP configuration to production
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
